@@ -1,0 +1,13 @@
+{
+    "executable": "philer",
+    "bootstrap-file": "src/bootstrap.php",
+    "phar": {
+        "src": "src",
+        "vendor": "vendor",
+        "config.php": "config.php",
+        "config.local.php": "config.local.php"
+    },
+    "optional": [
+        "config.local.php"
+    ]
+}

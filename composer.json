@@ -1,0 +1,12 @@
+{
+    "name": "kael-shipman/philer",
+    "require": {
+        "nategood/commando": "~0.2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "KS\\": "src/"
+        }
+    }
+}
+
