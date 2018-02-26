@@ -4,8 +4,89 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "055f7ce15939588c432926133f96034b",
+    "content-hash": "e4138aba954e4fabedf18a8e5c9e82cc",
     "packages": [
+        {
+            "name": "kael-shipman/php-executables",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kael-shipman/php-executables.git",
+                "reference": "fcebeb61557467c9906b5bbad6590b7344939963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kael-shipman/php-executables/zipball/fcebeb61557467c9906b5bbad6590b7344939963",
+                "reference": "fcebeb61557467c9906b5bbad6590b7344939963",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sockets": "*",
+                "kael-shipman/php-std-traits": "^5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "KS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A set of small, abstract executable classes and peripherals",
+            "time": "2018-02-26T05:27:39+00:00"
+        },
+        {
+            "name": "kael-shipman/php-std-traits",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kael-shipman/php-std-traits.git",
+                "reference": "96c073ffca9a35f6a0c8793989fd20eec349831b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kael-shipman/php-std-traits/zipball/96c073ffca9a35f6a0c8793989fd20eec349831b",
+                "reference": "96c073ffca9a35f6a0c8793989fd20eec349831b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "KS\\": "src/"
+                },
+                "files": [
+                    "src/Exceptions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kael Shipman",
+                    "email": "kael.shipman@gmail.com",
+                    "homepage": "https://colors.kaelshipman.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An assortment of traits, exceptions and minor classes that help to implement standard PHP interfaces like ArrayAccess, Iterator, etc., as well as a few other useful features.",
+            "keywords": [
+                "traits"
+            ],
+            "time": "2018-02-26T00:58:01+00:00"
+        },
         {
             "name": "kevinlebrun/colors.php",
             "version": "0.4.1",

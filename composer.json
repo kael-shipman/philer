@@ -1,7 +1,8 @@
 {
     "name": "kael-shipman/philer",
     "require": {
-        "nategood/commando": "~0.2.9"
+        "nategood/commando": "~0.2.9",
+        "kael-shipman/php-executables": "~0.4.0"
     },
     "autoload": {
         "psr-4": {
