@@ -1,5 +1,4 @@
 {
-    "log-level": 7,
     "build-dir": "build",
     "ignore": [
         "*test*",
