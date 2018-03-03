@@ -3,15 +3,17 @@ namespace KS;
 
 class PhilerConfig extends ExecutableConfig implements PhilerConfigInterface
 {
+    private $hjsonParser;
+
     public function loadPhilerJson(string $philerFile): void
     {
         if (!file_exists($philerFile)) {
-            throw new \InvalidConfigException("Missing philer.hjson local config file.");
+            throw new InvalidConfigException("Missing philer.hjson local config file.");
         }
 
-        $config = json_decode(file_get_contents($philerFile), true);
+        $config = $this->parseConfig(file_get_contents($philerFile));
         if (!is_array($config)) {
-            throw new InvalidConfigException("The JSON passed to `loadPhilerJson` appears to be invalid!");
+            throw new InvalidConfigException("The HJSON passed to `loadPhilerJson` appears to be invalid!");
         }
         $this->config = array_merge_recursive($this->config, $config);
     }
@@ -44,6 +46,20 @@ class PhilerConfig extends ExecutableConfig implements PhilerConfigInterface
     public function getLogLevel(): int
     {
         return isset($this->config['log-level']) ? $this->config['log-level'] : LOG_ERR;
+    }
+
+    protected function getHjsonParser(): \HJSON\HJSONParser
+    {
+        if (!$this->hjsonParser) {
+            $this->hjsonParser = new \HJSON\HJSONParser();
+        }
+        return $this->hjsonParser;
+    }
+
+    protected function parseConfig(string $config): array
+    {
+        $parser = $this->getHjsonParser();
+        return $parser->parse($config, ['assoc' => true]);
     }
 }
 

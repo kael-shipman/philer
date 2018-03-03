@@ -16,7 +16,12 @@ if ($cmd[0] === 'extract') {
         ->title("executable");
 }
 
-$config = new PhilerConfig("/etc/philer/config.hjson", "/etc/philer/config.d", "/home/".getenv("USER")."/.config/philer/config.hjson");
+$configSources = ["/etc/philer/config.hjson", "/etc/philer/config.d"];
+if (getenv("USER")) {
+    $configSources[] = "/home/".getenv("USER")."/.config/philer/config.hjson";
+}
+
+$config = new PhilerConfig($configSources, $configSources);
 $philer = new Philer($config);
 
 try {

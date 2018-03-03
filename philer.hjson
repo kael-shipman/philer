@@ -1,0 +1,19 @@
+{
+    build-dir: build
+    ignore: [
+        *test*
+        *.log
+        *.sw[op]
+    ]
+    executables: [
+        { 
+            name: philer
+            bootstrap-file: src/bootstrap.php
+            phar-spec: {
+                src: src
+                vendor: vendor
+            }
+        }
+    ]
+}
+

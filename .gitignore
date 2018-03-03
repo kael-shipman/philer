@@ -2,4 +2,3 @@ tmp
 *.sw[op]
 *.local*
 vendor
-build

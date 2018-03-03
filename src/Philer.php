@@ -32,11 +32,11 @@ class Philer extends AbstractExecutable {
         if (!$root) {
             $root = getcwd();
         }
-        while (!file_exists("$root/philer.json") && is_dir("$root/../")) {
-            $root = "$root/../";
+        while (!file_exists("$root/philer.hjson") && !file_exists("$root/philer.json") && is_dir("$root/..")) {
+            $root = "$root/..";
         }
-        if (!file_exists("$root/philer.json")) {
-            throw new \RuntimeException("Can't find philer.json file! Searched in `$root`....");
+        if (!file_exists("$root/philer.hjson") && !file_exists("$root/philer.json")) {
+            throw new \RuntimeException("Can't find philer.hjson file! Searched in `$root`....");
         }
         $this->log("Setting root to `$root`", LOG_DEBUG);
         $this->root = $root;
@@ -46,7 +46,11 @@ class Philer extends AbstractExecutable {
     {
         $this->log("Beginning compilation", LOG_INFO, [ "syslog", STDOUT ], true);
 
-        $this->config->loadPhilerJson("$this->root/philer.json");
+        $philerJson = "$this->root/philer.hjson";
+        if (!file_exists($philerJson)) {
+            $philerJson = "$this->root/philer.json";
+        }
+        $this->config->loadPhilerJson($philerJson);
 
         $buildDir = "{$this->root}/{$this->config->getBuildDir()}";
         if (!is_dir($buildDir)) {
@@ -118,7 +122,7 @@ class Philer extends AbstractExecutable {
     protected function extract(string $executable = null): void
     {
         if (!$executable) {
-            $this->config->loadPhilerJson("$this->root/philer.json");
+            $this->config->loadPhilerJson("$this->root/philer.hjson");
             $exs = $this->config->getExecutableConfigs();
             if (count($exs) === 0) {
                 throw new \RuntimeException("No executables configured to be compiled!");
