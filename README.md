@@ -37,7 +37,7 @@ Final config is composed by merging all of these down from 4 to 1, where config 
 
 Here's a sample config file that should give you an idea of how to use the system:
 
-```json
+```hjson
 {
     // Debug levels go from 1 (Emergency) to 7 (Debug)
     log-level: 7
