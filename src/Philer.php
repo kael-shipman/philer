@@ -54,7 +54,7 @@ class Philer extends AbstractExecutable {
 
         $buildDir = "{$this->root}/{$this->config->getBuildDir()}";
         if (!is_dir($buildDir)) {
-            mkdir($buildDir);
+            mkdir($buildDir, 0755, true);
         }
 
         $globalIgnore = $this->config->getIgnoreList();
