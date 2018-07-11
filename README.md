@@ -17,9 +17,13 @@ Usuage is pretty simple. Just create your config file and call `philer compile` 
 
 I'm a strong believer in the right package manager for the job, and since this is meant to be a system-wide executable, the right package manager is the one your OS provides (apt, yum, brew, etc).
 
-HOWEVER, I haven't gotten around to making real packages for this yet, so for now, just download the built phar directly (via the github release page or by just downloading `build/philer` out of this repo) and place it in your path.
+HOWEVER, the only OS package I've made for it so far is the deb package, which you can get from my [package repo](https://packages.kaelshipman.me). For the rest, you can just download the built phar directly (via the github release page or by just downloading `build/philer` out of this repo) and place it in your path.
 
-Technically, you can also install it on a per-project basis via composer, too (it'll show up at `vendor/bin/philer`). That's cool and all, but I prefer having a system-wide binary.
+Technically, you can also install it on a per-project basis via composer (it'll show up at `vendor/bin/philer`). That's cool and all, but I prefer having a system-wide binary.
+
+### "Compiling" From Source
+
+`philer` can be compiled from source by simply running `composer install && php ./src/bootstrap.php compile` from the repo root.
 
 
 ## Config

@@ -1,6 +1,7 @@
 {
     "name": "kael-shipman/philer",
     "require": {
+        "ext-mbstring": "*",
         "nategood/commando": "~0.2.9",
         "kael-shipman/php-executables": "~0.5.0",
         "laktak/hjson": "^2.0.0"

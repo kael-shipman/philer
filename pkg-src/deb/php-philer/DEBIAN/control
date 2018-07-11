@@ -1,0 +1,10 @@
+Package: php-philer
+Version: ::VERSION::
+Section: free
+Priority: optional
+Architecture: all
+Depends: php-cli, php-mbstring
+Installed-Size: 500
+Maintainer: Kael Shipman <kael.shipman@gmail.com>
+Description: A PHP Phar Compiler
+ This package provides the `philer` command line utility for compiling PHP phar archives.
