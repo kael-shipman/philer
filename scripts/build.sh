@@ -4,7 +4,6 @@ set -e
 
 function setup_env() {
     setup_deb_env $@
-    rm -Rf "$builddir"/*
 
     if [ ! -e src/bootstrap.php ]; then
         >&2 echo
